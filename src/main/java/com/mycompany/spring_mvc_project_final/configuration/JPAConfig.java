@@ -30,10 +30,9 @@ public class JPAConfig {
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://127.0.0.1:3307/project_final?characterEncoding=UTF-8");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8");
         dataSource.setUsername("root");
-        dataSource.setPassword("admin");
-
+        dataSource.setPassword("123456");
         return dataSource;
     }
 
@@ -80,8 +79,8 @@ public class JPAConfig {
         //Using gmail
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
-        mailSender.setUsername("loannguyen1501@gmail.com");
-        mailSender.setPassword("ooehxjdtqdxiqfmk");
+        mailSender.setUsername("nguyenhuyhoangtp24@gmail.com");
+        mailSender.setPassword("jtupluomxtorecnt");
 
         Properties javaMailProperties = new Properties();
         javaMailProperties.put("mail.smtp.starttls.enable", "true");
