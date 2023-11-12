@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <meta charset="UTF-8">
         <meta name="description" content="Male_Fashion Template">
         <meta name="keywords" content="Male_Fashion, unica, creative, html">
@@ -11,7 +12,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Home Page</title>
         <jsp:include page="include/css-page.jsp"/>
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     </head>
 
@@ -683,7 +687,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-06.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-06.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -715,7 +719,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-07.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-07.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -747,7 +751,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-08.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-08.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -779,7 +783,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-09.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-09.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -811,7 +815,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-10.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-10.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -843,7 +847,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-11.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-11.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -875,7 +879,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-12.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-12.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -939,7 +943,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-14.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-14.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -971,7 +975,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-15.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-15.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -1003,7 +1007,7 @@
  					<!-- Block2 -->
  					<div class="block2">
  						<div class="block2-pic hov-img0">
- 							<img src="images/product-16.jpg" alt="IMG-PRODUCT">
+ 							<img src="resources/images/product-16.jpg" alt="IMG-PRODUCT">
 
  							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
  								Quick View
@@ -1215,7 +1219,7 @@
  								<div class="slick3 gallery-lb">
  									<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
  										<div class="wrap-pic-w pos-relative">
- 											<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+ 											<img src="resources/images/product-detail-01.jpg" alt="IMG-PRODUCT">
 
  											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
  												<i class="fa fa-expand"></i>
@@ -1225,7 +1229,7 @@
 
  									<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
  										<div class="wrap-pic-w pos-relative">
- 											<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
+ 											<img src="resources/images/product-detail-02.jpg" alt="IMG-PRODUCT">
 
  											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
  												<i class="fa fa-expand"></i>
@@ -1235,7 +1239,7 @@
 
  									<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
  										<div class="wrap-pic-w pos-relative">
- 											<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
+ 											<img src="resources/images/product-detail-03.jpg" alt="IMG-PRODUCT">
 
  											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
  												<i class="fa fa-expand"></i>
