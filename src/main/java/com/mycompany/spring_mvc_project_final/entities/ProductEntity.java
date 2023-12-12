@@ -1,59 +1,49 @@
 package com.mycompany.spring_mvc_project_final.entities;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
-@Data
 @Entity
 @Table(name = "product")
-@NoArgsConstructor
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private int id;
-    @Column (name="name")
-    private String name;
-    @Column (name="description")
-    private String description;
+    @Column(name="proId")
+    private int proId;
+
+    @Column (name="productName")
+    private String productName;
+    @Column (name="productDescription")
+    private String productDescription;
     @Column (name="producer")
     private String producer;
     @Column (name="image")
     private String image;
     @Column (name="price")
     private double price;
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-    private List<OrderDetailEntity> orderDetailEntityList = new ArrayList<>();
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    private List<OrderDetailEntity> orderDetailEntityList;
 
-    public int getId() {
-        return id;
+    public Integer getProId() {
+        return proId;
+    }
+    public void setProId(int proId) {
+        this.proId = proId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getProductName() {
+        return productName;
     }
 
-    public String getName() {
-        return name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getProductDescription() {
+        return productDescription;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
     public String getProducer() {
@@ -63,7 +53,6 @@ public class ProductEntity {
     public void setProducer(String producer) {
         this.producer = producer;
     }
-
     public String getImage() {
         return image;
     }
@@ -71,6 +60,7 @@ public class ProductEntity {
     public void setImage(String image) {
         this.image = image;
     }
+
 
     public double getPrice() {
         return price;
@@ -87,4 +77,6 @@ public class ProductEntity {
     public void setOrderDetailEntityList(List<OrderDetailEntity> orderDetailEntityList) {
         this.orderDetailEntityList = orderDetailEntityList;
     }
+
+
 }

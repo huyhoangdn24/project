@@ -51,11 +51,12 @@ public class LoginController {
 
         }
 
-        return "student/index";
+        return "product/index";
     }
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
-    public String welcomePage(Model model) {
+    public String welcomePage(Model model,HttpSession session) {
+
         return "home";
     }
 }

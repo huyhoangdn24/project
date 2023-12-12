@@ -1,0 +1,30 @@
+
+
+*{
+      padding: 0;
+      margin: 0;
+}
+.container{
+      max-width: 1224px;
+      width: 100%;
+      margin: 0 auto;
+}
+
+.container .flex-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.container .flex-container .item{
+      width:21%;
+      padding: 10px;
+      margin: 7px;
+    }
+.container .flex-container .item img {
+      width:100%;
+    }
+.container.flex-container .item a {
+      margin-top: 10px;
+      margin-left: 70px;
+    }

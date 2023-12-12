@@ -1,6 +1,7 @@
 package com.mycompany.spring_mvc_project_final.repository;
 
 import com.mycompany.spring_mvc_project_final.entities.OrderEntity;
+import com.mycompany.spring_mvc_project_final.entities.ProductEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -15,4 +16,5 @@ public interface OrderRepository extends CrudRepository<OrderEntity,Integer> {
             "where o.customerName like %?1% or o.orderDate like %?1% or p.prName like %?1% "
             , nativeQuery = true)
     List<OrderEntity> findBySearchInputContaining(String searchInput);
+    OrderEntity findByorderId(int orderId);
 }

@@ -1,68 +1,149 @@
 <!DOCTYPE html>
 <html>
- <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
-                        </div>
-                        <p>The customer is at the heart of our unique business model, which includes design.</p>
-                        <a href="#"><img src="img/payment.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Sale</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Delivary</a></li>
-                            <li><a href="#">Return & Exchanges</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>NewLetter</h6>
-                        <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
-                            <form action="#">
-                                <input type="text" placeholder="Your email">
-                                <button type="submit"><span class="icon_mail_alt"></span></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright ©
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+ <!-- Footer -->
+         	<footer class="bg3 p-t-75 p-b-32">
+         		<div class="container">
+         			<div class="row">
+         				<div class="col-sm-6 col-lg-3 p-b-50">
+         					<h4 class="stext-301 cl0 p-b-30">
+         						Categories
+         					</h4>
+
+         					<ul>
+         						<li class="p-b-10">
+         							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+         								Women
+         							</a>
+         						</li>
+
+         						<li class="p-b-10">
+         							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+         								Men
+         							</a>
+         						</li>
+
+         						<li class="p-b-10">
+         							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+         								Shoes
+         							</a>
+         						</li>
+
+         						<li class="p-b-10">
+         							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+         								Watches
+         							</a>
+         						</li>
+         					</ul>
+         				</div>
+
+         				<div class="col-sm-6 col-lg-3 p-b-50">
+         					<h4 class="stext-301 cl0 p-b-30">
+         						Help
+         					</h4>
+
+         					<ul>
+         						<li class="p-b-10">
+         							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+         								Track Order
+         							</a>
+         						</li>
+
+         						<li class="p-b-10">
+         							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+         								Returns
+         							</a>
+         						</li>
+
+         						<li class="p-b-10">
+         							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+         								Shipping
+         							</a>
+         						</li>
+
+         						<li class="p-b-10">
+         							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+         								FAQs
+         							</a>
+         						</li>
+         					</ul>
+         				</div>
+
+         				<div class="col-sm-6 col-lg-3 p-b-50">
+         					<h4 class="stext-301 cl0 p-b-30">
+         						GET IN TOUCH
+         					</h4>
+
+         					<p class="stext-107 cl7 size-201">
+         						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+         					</p>
+
+         					<div class="p-t-27">
+         						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+         							<i class="fa fa-facebook"></i>
+         						</a>
+
+         						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+         							<i class="fa fa-instagram"></i>
+         						</a>
+
+         						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+         							<i class="fa fa-pinterest-p"></i>
+         						</a>
+         					</div>
+         				</div>
+
+         				<div class="col-sm-6 col-lg-3 p-b-50">
+         					<h4 class="stext-301 cl0 p-b-30">
+         						Newsletter
+         					</h4>
+
+         					<form>
+         						<div class="wrap-input1 w-full p-b-4">
+         							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+         							<div class="focus-input1 trans-04"></div>
+         						</div>
+
+         						<div class="p-t-18">
+         							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+         								Subscribe
+         							</button>
+         						</div>
+         					</form>
+         				</div>
+         			</div>
+
+         			<div class="p-t-40">
+         				<div class="flex-c-m flex-w p-b-18">
+         					<a href="#" class="m-all-1">
+         						<img src="resources/images/icons/icon-pay-01.png" alt="ICON-PAY">
+         					</a>
+
+         					<a href="#" class="m-all-1">
+         						<img src="resources/images/icons/icon-pay-02.png" alt="ICON-PAY">
+         					</a>
+
+         					<a href="#" class="m-all-1">
+         						<img src="resources/images/icons/icon-pay-03.png" alt="ICON-PAY">
+         					</a>
+
+         					<a href="#" class="m-all-1">
+         						<img src="resources/images/icons/icon-pay-04.png" alt="ICON-PAY">
+         					</a>
+
+         					<a href="#" class="m-all-1">
+         						<img src="resources/images/icons/icon-pay-05.png" alt="ICON-PAY">
+         					</a>
+         				</div>
+
+         				<p class="stext-107 cl6 txt-center">
+         					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+         Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+         				</p>
+         			</div>
+         		</div>
+         	</footer>
+
 </body>
 </html>

@@ -13,13 +13,18 @@ public class OrderDetailEntity {
     @Column(name="orderDetailId")
     private int orderDetailId;
     @Column(name="quantity")
-    private int quantity;
-    @ManyToOne
-    @JoinColumn(name = "orderId")
-    private OrderEntity order;
+    private int quantity ;
     @ManyToOne
     @JoinColumn(name = "proId")
     private ProductEntity product;
+    @ManyToOne
+    @JoinColumn(name = "account_ID")
+    private AccountEntity account;
+
+    @ManyToOne
+    @JoinColumn(name = "orderId")
+    private OrderEntity orders;
+
 
     public int getOrderDetailId() {
         return orderDetailId;
@@ -29,7 +34,7 @@ public class OrderDetailEntity {
         this.orderDetailId = orderDetailId;
     }
 
-    public int getQuantity() {
+    public int getQuantity(int i) {
         return quantity;
     }
 
@@ -37,19 +42,40 @@ public class OrderDetailEntity {
         this.quantity = quantity;
     }
 
-    public OrderEntity getOrder() {
-        return order;
+    public ProductEntity getProduct(ProductEntity product) {
+        return this.product;
     }
 
-    public void setOrder(OrderEntity order) {
-        this.order = order;
+    public void setProduct(ProductEntity product) {
+        this.product = product;
+    }
+
+
+    public int getQuantity() {
+        return quantity;
     }
 
     public ProductEntity getProduct() {
         return product;
     }
 
-    public void setProduct(ProductEntity product) {
-        this.product = product;
+    public AccountEntity getAccount() {
+        return account;
+    }
+
+    public OrderEntity getOrders(OrderEntity orders) {
+        return this.orders;
+    }
+
+    public void setOrders(OrderEntity orders) {
+        this.orders = orders;
+    }
+
+    public AccountEntity getAccount(AccountEntity acc) {
+        return account;
+    }
+
+    public void setAccount(AccountEntity account) {
+        this.account = account;
     }
 }

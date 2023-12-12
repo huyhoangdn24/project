@@ -1,11 +1,16 @@
 package com.mycompany.spring_mvc_project_final.service;
 
 import com.mycompany.spring_mvc_project_final.entities.ProductEntity;
+import com.mycompany.spring_mvc_project_final.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
+@Service
+public class ProductService {
+    @Autowired
+    ProductRepository productRepository;
 
-public interface ProductService {
-     public int add(ProductEntity p);
-     public int remove(int id);
-     public List<ProductEntity> getAll();
+    public ProductEntity findByproId(int proId){
+        return productRepository.findByproId(proId);
+    }
 }
