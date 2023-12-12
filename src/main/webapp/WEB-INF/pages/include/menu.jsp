@@ -1,205 +1,107 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Male_Fashion Template">
-    <meta name="keywords" content="Male_Fashion, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Thay đổi thành đường dẫn đến file CSS của bạn -->
-</head>
-<style>
-   <style>
+<%@ taglib prefix="mvc" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
+ <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+        <meta name="description" content="Male_Fashion Template">
+        <meta name="keywords" content="Male_Fashion, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Home Page</title>
+       <link rel="icon" type="image/png" href="resources/images/icons/favicon.png"/>
+       	<link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap/css/bootstrap.min.css">
+       	<link rel="stylesheet" type="text/css" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+       	<link rel="stylesheet" type="text/css" href="resources/fonts/iconic/css/material-design-iconic-font.min.css">
+       	<link rel="stylesheet" type="text/css" href="resources/fonts/linearicons-v1.0.0/icon-font.min.css">
+       	<link rel="stylesheet" type="text/css" href="resources/vendor/animate/animate.css">
+       	<link rel="stylesheet" type="text/css" href="resources/vendor/css-hamburgers/hamburgers.min.css">
+       	<link rel="stylesheet" type="text/css" href="resources/vendor/animsition/css/animsition.min.css">
+       	<link rel="stylesheet" type="text/css" href="resources/vendor/select2/select2.min.css">
+       	<link rel="stylesheet" type="text/css" href="resources/vendor/daterangepicker/daterangepicker.css">
+       	<link rel="stylesheet" type="text/css" href="resources/vendor/slick/slick.css">
+       	<link rel="stylesheet" type="text/css" href="resources/vendor/MagnificPopup/magnific-popup.css">
+       	<link rel="stylesheet" type="text/css" href="resources/vendor/perfect-scrollbar/perfect-scrollbar.css">
+       	<link rel="stylesheet" type="text/css" href="resources/css/util.css">
+       	<link rel="stylesheet" type="text/css" href="resources/css/main.css">
+       	<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+
+    </head>
+<body class="animsition">
+
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop container">
+
+					<!-- Logo desktop -->
+					<a href="#" class="logo">
+						<img src="resources/images/icons/logo-01.png" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li class="active-menu">
+								<a href="index">Home</a>
+							</li>
+
+							<li>
+								<a href="product.html">Shop</a>
+							</li>
+
+							<li class="label1" data-label1="hot">
+								<a href="shoping-cart">Features</a>
+							</li>
+
+							<li>
+								<a href="blog">Blog</a>
+							</li>
+
+							<li>
+								<a href="about">About</a>
+							</li>
+
+							<li>
+								<a href="contact">Contact</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Icon header -->
+					<div class="wrap-icon-header flex-w flex-r-m">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+							<i class="zmdi zmdi-search"></i>
+						</div>
+
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="0">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</div>
+
+						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+							<i class="zmdi zmdi-favorite-outline"></i>
+						</a>
+					</div>
+				</nav>
+			</div>
+		</div>
 
 
-          button.search-btn, input {
-              font: 1em Hind, sans-serif;
-              line-height: 1.5em;
-          }
-          input {
-              color: #171717;
-          }
-          .search-bar {
-              display: flex;
-          }
 
-          .search-bar input,
-          .search-btn,
-          .search-btn:before,
-          .search-btn:after {
-              transition: all 0.25s ease-out;
-          }
-          .search-bar input,
-          .search-btn {
-              width: 3em;
-              height: 3em;
-          }
-          .search-bar input:invalid:not(:focus),
-          .search-btn {
-              cursor: pointer;
-          }
-          .search-bar,
-          .search-bar input:focus,
-          .search-bar input:valid  {
-              width: 100%;
-          }
-          .search-bar input:focus,
-          .search-bar input:not(:focus) + .search-btn:focus {
-              outline: transparent;
-          }
-          .search-bar {
-              padding-bottom: 1.5em;
-              justify-content: center;
-              max-width: 30em;
-          }
-          .search-bar input {
-              background: transparent;
-              border-radius: 1.5em;
-              box-shadow: 0 0 0 0.4em #171717 inset;
-              padding: 0.75em;
-              transform: translate(0.5em,0.5em) scale(0.5);
-              transform-origin: 100% 0;
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              appearance: none;
-          }
-          .search-bar input::-webkit-search-decoration {
-              -webkit-appearance: none;
-          }
-          .search-bar input:focus,
-          .search-bar input:valid {
-              background: #fff;
-              border-radius: 0.375em 0 0 0.375em;
-              box-shadow: 0 0 0 0.1em #d9d9d9 inset;
-              transform: scale(1);
-          }
-          .search-btn {
-              background: #171717;
-              border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
-              padding: 0.75em;
-              position: relative;
-              transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
-              transform-origin: 0 50%;
-          }
-          .search-btn:before,
-          .search-btn:after {
-              content: "";
-              display: block;
-              opacity: 0;
-              position: absolute;
-          }
-          .search-btn:before {
-              border-radius: 50%;
-              box-shadow: 0 0 0 0.2em #f1f1f1 inset;
-              top: 0.75em;
-              left: 0.75em;
-              width: 1.2em;
-              height: 1.2em;
-          }
-          .search-btn:after {
-              background: #f1f1f1;
-              border-radius: 0 0.25em 0.25em 0;
-              top: 51%;
-              left: 51%;
-              width: 0.75em;
-              height: 0.25em;
-              transform: translate(0.2em,0) rotate(45deg);
-              transform-origin: 0 50%;
-          }
-          .search-btn span {
-              display: inline-block;
-              overflow: hidden;
-              width: 1px;
-              height: 1px;
-          }
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="images/icons/icon-close2.png" alt="CLOSE">
+				</button>
 
-          /* Active state */
-          .search-bar input:focus + .search-btn,
-          .search-bar input:valid + .search-btn {
-              background: #008cff;
-              border-radius: 0 0.375em 0.375em 0;
-              transform: scale(1);
-          }
-          .search-bar input:focus + .search-btn:before,
-          .search-bar input:focus + .search-btn:after,
-          .search-bar input:valid + .search-btn:before,
-          .search-bar input:valid + .search-btn:after {
-              opacity: 1;
-          }
-          .search-bar input:focus + .search-btn:hover,
-          .search-bar input:valid + .search-btn:hover,
-          .search-bar input:valid:not(:focus) + .search-btn:focus {
-              background: #0c48db;
-          }
-          .search-bar input:focus + .search-btn:active,
-          .search-bar input:valid + .search-btn:active {
-              transform: translateY(1px);
-          }
-
-          @media screen and (prefers-color-scheme: dark) {
-              body, input {
-                  color: #f1f1f1;
-              }
-              body {
-                  background: #171717;
-              }
-              .search-bar input {
-                  box-shadow: 0 0 0 0.4em #f1f1f1 inset;
-              }
-              .search-bar input:focus,
-              .search-bar input:valid {
-                  background: #3d3d3d;
-                  box-shadow: 0 0 0 0.1em #3d3d3d inset;
-              }
-              .search-btn {
-                  background: #f1f1f1;
-              }
-          }
-      </style>
-</style>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-3">
-                <div class="header__logo">
-                    <a href="./index.html"><img src="resources/img/logo.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <nav class="header__menu mobile-menu">
-                    <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop.html">Shop</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="./about.html">About Us</a></li>
-                                <li><a href="./shop-details.html">Shop Details</a></li>
-                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                <li><a href="./checkout.html">Check Out</a></li>
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contacts</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-lg-3 col-md-3">
-                 <div class = 'search-box d-flex justify-content-between'>
-                           <form action="/" class="search-bar" method="post">
-                               <input type="search" name="movie-name" pattern=".*\S.*" required>
-                               <button class="search-btn" type="submit">
-                                   <span>Tìm</span>
-                               </button>
-                           </form>
-                            <a href="#"><img src="resources/img/icon/cart.png" alt=""></a>
-                       </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</header>
 </html>
