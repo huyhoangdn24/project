@@ -21,6 +21,6 @@ public interface AccountRepository extends CrudRepository<AccountEntity, Long> {
     boolean existsByEmail(String email);
     AccountEntity findByEmail(String email);
 
-//    @Query("SELECT a.id FROM AccountEntity a WHERE a.email = :email")
-//    Long findAccountIdByEmail(@Param("email") String email);
+    @Query("SELECT a.id FROM AccountEntity a WHERE a.email = :email")
+    Long findAccountIdByEmail(@Param("email") String email);
 }

@@ -47,11 +47,11 @@
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="product">Shop</a>
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="shoping-cart">Features</a>
+								<a href="shopping-cart">Features</a>
 							</li>
 
 							<li>
@@ -92,7 +92,7 @@
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
 				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
+					<img src="resources/images/icons/icon-close2.png" alt="CLOSE">
 				</button>
 
 				<form class="wrap-search-header flex-w p-l-15">
@@ -104,4 +104,9 @@
 			</div>
 		</div>
 	</header>
+	<script>   document.querySelector('.icon-header-noti.js-show-cart').addEventListener('click', function() {
+         displayCartProducts();
+         // $('#cartModal').modal('show');   });
+       </script>
+
 </html>

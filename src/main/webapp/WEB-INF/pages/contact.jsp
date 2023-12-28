@@ -1,6 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="mvc" uri="http://www.springframework.org/tags/form" %>
+
+<%@taglib  uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,25 +38,36 @@
             			<div class="top-bar">
             				<div class="content-topbar flex-sb-m h-full container">
             					<div class="left-top-bar">
-            						Free shipping for standard order over $100
+            						 <p>
+                                        <sec:authorize access="isAuthenticated()">
+                                            Authenticated as
+                                            <sec:authentication property="principal.username" />
+                                        </sec:authorize>
+                                    </p>
             					</div>
 
             					<div class="right-top-bar flex-w h-full">
-            						<a href="#" class="flex-c-m trans-04 p-lr-25">
-            							Help & FAQs
-            						</a>
+            					<a href="#" class="flex-c-m trans-04 p-lr-25">
+                                    Help & FAQs
+                                </a>
+            						  <sec:authorize access="isAuthenticated()">
+                                    <sec:authorize access="hasRole('ROLE_ADMIN')">
+                                        <a href="<c:url value='/admin/home' />"class="flex-c-m trans-04 p-lr-25">Admin Home</a>
+                                    </sec:authorize>
+                                    <a href="<c:url value='/logout' />"class="flex-c-m trans-04 p-lr-25">Logout</a>
+                                </sec:authorize>
 
-            						<a href="#" class="flex-c-m trans-04 p-lr-25">
-            							My Account
-            						</a>
+                                <!-- If not logged in, show the Login Page -->
+                                <sec:authorize access="!isAuthenticated()">
+                                    <a href="<c:url value='/login' />"class="flex-c-m trans-04 p-lr-25">Login</a>
+                                </sec:authorize>
+                                <a href="#" class="flex-c-m trans-04 p-lr-25">
+                                    EN
+                                </a>
 
-            						<a href="#" class="flex-c-m trans-04 p-lr-25">
-            							EN
-            						</a>
-
-            						<a href="#" class="flex-c-m trans-04 p-lr-25">
-            							USD
-            						</a>
+                                <a href="#" class="flex-c-m trans-04 p-lr-25">
+                                    USD
+                                </a>
             					</div>
             				</div>
             			</div>

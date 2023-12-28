@@ -29,7 +29,7 @@ public class OrderDetailController {
     OrderDetailRepository orderDetailRepository;
     @Autowired
     OrderRepository orderRepository;
-    @RequestMapping(value = "/add/{proId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/shopping-cart/{proId}", method = RequestMethod.GET)
     public String viewCart(Model model,@PathVariable int proId, HttpServletRequest request) {
         HttpSession session=request.getSession();
         String account=(String) session.getAttribute("username");
@@ -58,25 +58,41 @@ public class OrderDetailController {
             ob.setQuantity(1);
             orderDetailEnittyList.add(ob);
         }
+        double total = 0.0;
+        for (OrderDetailEntity item : orderDetailEnittyList) {
+            total += item.getProduct().getPrice() * item.getQuantity();
+        }
         session.setAttribute("cartItems", orderDetailEnittyList);
+        session.setAttribute("cartTotal", total);
+        session.setAttribute("product", product);
         model.addAttribute("orderDetailEnittyList",orderDetailEnittyList);
+        model.addAttribute("cartTotal", total);
         return "shopping-cart";
     }
 
-
     @RequestMapping(value = "/delete/{proId}", method = RequestMethod.GET)
-    public String removeFromCart(@PathVariable int proId, HttpServletRequest request, Model model) {
-        HttpSession session = request.getSession();
+    public String removeFromCart(@PathVariable int proId, HttpSession session) {
         List<OrderDetailEntity> orderDetailEntityList = (List<OrderDetailEntity>) session.getAttribute("cartItems");
-        if (orderDetailEntityList != null) {
-            // Tìm và xóa sản phẩm có proId tương ứng
-            boolean removed = orderDetailEntityList.removeIf(orderDetail -> orderDetail.getProduct().getProId() == proId);
-            if (removed) {
-                session.setAttribute("cartItems", orderDetailEntityList); // Cập nhật giỏ hàng trong Session nếu có sản phẩm được xóa
+
+        if (orderDetailEntityList != null && !orderDetailEntityList.isEmpty()) {
+            orderDetailEntityList.removeIf(item -> item.getProduct().getProId() == proId);
+
+            session.setAttribute("cartItems", orderDetailEntityList);
+
+            double total = 0.0;
+            for (OrderDetailEntity item : orderDetailEntityList) {
+                total += item.getProduct().getPrice() * item.getQuantity();
             }
+
+            session.setAttribute("cartTotal", total);
         }
-        return "shopping-cart"; // Trả về view để hiển thị giỏ hàng
+
+        return "redirect:/product";
     }
+
+
+
+
 
 
 }

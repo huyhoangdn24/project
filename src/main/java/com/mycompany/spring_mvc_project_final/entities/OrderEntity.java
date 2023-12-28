@@ -23,6 +23,12 @@ public class OrderEntity {
     private String productName;
     @Column(name = "customerName")
     private String customerName;
+    @Column(name = "status")
+    private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "accountId")
+    private AccountEntity account;
     @OneToMany(mappedBy = "orders", fetch = FetchType.LAZY)
     private  List<PaymentEntity> paymentEntityList;
     @OneToMany(mappedBy = "orders", fetch = FetchType.LAZY)
@@ -61,6 +67,22 @@ public class OrderEntity {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public AccountEntity getAccount() {
+        return account;
+    }
+
+    public void setAccount(AccountEntity account) {
+        this.account = account;
     }
 
     public List<PaymentEntity> getPaymentEntityList() {

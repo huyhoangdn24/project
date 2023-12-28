@@ -20,8 +20,13 @@ public class ProductEntity {
     private String image;
     @Column (name="price")
     private double price;
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @Column(name = "quantityInStock")
+    private int quantityInStock;
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private List<OrderDetailEntity> orderDetailEntityList;
+    @ManyToOne
+    @JoinColumn(name = "categoryId")
+    private CategoryEntity category;
 
     public Integer getProId() {
         return proId;
@@ -62,6 +67,7 @@ public class ProductEntity {
     }
 
 
+
     public double getPrice() {
         return price;
     }
@@ -78,5 +84,19 @@ public class ProductEntity {
         this.orderDetailEntityList = orderDetailEntityList;
     }
 
+    public CategoryEntity getCategory() {
+        return category;
+    }
 
+    public void setCategory(CategoryEntity category) {
+        this.category = category;
+    }
+
+    public int getQuantityInStock() {
+        return quantityInStock;
+    }
+
+    public void setQuantityInStock(int quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
 }

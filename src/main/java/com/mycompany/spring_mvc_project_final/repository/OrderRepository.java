@@ -16,5 +16,7 @@ public interface OrderRepository extends CrudRepository<OrderEntity,Integer> {
 //            "where o.customerName like %?1% or o.orderDate like %?1% or p.prName like %?1% "
 //            , nativeQuery = true)
 //    List<OrderEntity> findBySearchInputContaining(String searchInput);
+List<OrderEntity> findByAccount_Id(Long accountId);
+    OrderEntity findById(int orderId);
     OrderEntity findByorderId(int orderId);
 }

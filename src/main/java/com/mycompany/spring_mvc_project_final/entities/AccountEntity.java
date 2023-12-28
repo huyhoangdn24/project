@@ -44,7 +44,7 @@ public class AccountEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     private UserStatus status;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "account_role",
             joinColumns = @JoinColumn(name = "user_id",
                     referencedColumnName = "id"),

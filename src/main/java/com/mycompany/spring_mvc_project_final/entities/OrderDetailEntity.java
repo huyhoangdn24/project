@@ -20,7 +20,6 @@ public class OrderDetailEntity {
     @ManyToOne
     @JoinColumn(name = "account_ID")
     private AccountEntity account;
-
     @ManyToOne
     @JoinColumn(name = "orderId")
     private OrderEntity orders;
@@ -77,5 +76,9 @@ public class OrderDetailEntity {
 
     public void setAccount(AccountEntity account) {
         this.account = account;
+    }
+
+    public OrderEntity getOrders() {
+        return orders;
     }
 }

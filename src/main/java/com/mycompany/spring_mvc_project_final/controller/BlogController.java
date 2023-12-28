@@ -10,4 +10,8 @@ public class BlogController {
     public String viewProducts(Model model) {
         return "blog";
     }
+    @RequestMapping(value = "/shopping-cart", method = RequestMethod.GET)
+    public String view(Model model) {
+        return "shopping-cart";
+    }
 }

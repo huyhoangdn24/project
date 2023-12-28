@@ -51,7 +51,7 @@ public class StudentController {
 	}
 	@RequestMapping(value = "/insertImage", method = RequestMethod.POST,
 			consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
-			produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	produces = {MediaType.APPLICATION_JSON_UTF8_VALUE,"text/plain;charset=UTF-8"})
 	public ModelAndView save(@RequestParam("name") String name, @RequestParam("age") Integer age,
 							 @RequestPart("photo") MultipartFile photo) {
 		try {

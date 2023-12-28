@@ -27,12 +27,13 @@ public class LoginController {
         return "login";
     }
     @RequestMapping("/admin/home")
-    public String viewHome(Model model) {
+    public String viewHome(Model model, HttpSession session) {
 
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = principal.toString();
         if (principal instanceof UserDetails) {
             username = ((UserDetails) principal).getUsername();
+            session.setAttribute("username", username);
         }
 
         model.addAttribute("message", "Hello Admin: " + username);
@@ -40,7 +41,7 @@ public class LoginController {
     }
 
     @RequestMapping("/user/home")
-    public String viewHome(Model model, HttpSession session) {
+    public String viewHomeUser(Model model, HttpSession session) {
 
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = principal.toString();

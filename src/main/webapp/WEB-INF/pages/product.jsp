@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="mvc" uri="http://www.springframework.org/tags/form" %>
+<%@taglib  uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,17 +45,29 @@
     			<div class="top-bar">
     				<div class="content-topbar flex-sb-m h-full container">
     					<div class="left-top-bar">
-    						Free shipping for standard order over $100
+    					<p>
+                            <sec:authorize access="isAuthenticated()">
+                                Authenticated as
+                                <sec:authentication property="principal.username" />
+                            </sec:authorize>
+                        </p>
     					</div>
 
     					<div class="right-top-bar flex-w h-full">
     						<a href="#" class="flex-c-m trans-04 p-lr-25">
     							Help & FAQs
     						</a>
+                              <sec:authorize access="isAuthenticated()">
+                                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                                    <a href="<c:url value='/admin/home' />"class="flex-c-m trans-04 p-lr-25">Admin Home</a>
+                                </sec:authorize>
+                                <a href="<c:url value='/logout' />"class="flex-c-m trans-04 p-lr-25">Logout</a>
+                            </sec:authorize>
 
-    						<a href="#" class="flex-c-m trans-04 p-lr-25">
-    							My Account
-    						</a>
+                            <!-- If not logged in, show the Login Page -->
+                            <sec:authorize access="!isAuthenticated()">
+                                <a href="<c:url value='/login' />"class="flex-c-m trans-04 p-lr-25">Login</a>
+                            </sec:authorize>
 
     						<a href="#" class="flex-c-m trans-04 p-lr-25">
     							EN
@@ -65,7 +79,84 @@
     					</div>
     				</div>
     			</div>
-        			 <jsp:include page="include/menu.jsp"/>
+        			 <div class="wrap-menu-desktop">
+                     				<nav class="limiter-menu-desktop container">
+
+                     					<!-- Logo desktop -->
+                     					<a href="#" class="logo">
+                     						<img src="resources/images/icons/logo-01.png" alt="IMG-LOGO">
+                     					</a>
+
+                     					<!-- Menu desktop -->
+                     					<div class="menu-desktop">
+                     						<ul class="main-menu">
+                     							<li class="active-menu">
+                     								<a href="index">Home</a>
+                     							</li>
+
+                     							<li>
+                     								<a href="product">Shop</a>
+                     							</li>
+                     							 <c:set var="featureDisplayed" value="false"/>
+
+                                                         <c:forEach items="${productList}" var="products">
+                                                             <c:if test="${not featureDisplayed}">
+                                                                 <c:set var="featureDisplayed" value="true"/>
+                                                                 <li class="label1" data-label1="hot">
+                                                                     <a href="shopping-cart/${products.proId}">Features</a>
+                                                                 </li>
+                                                             </c:if>
+                                                         </c:forEach>
+                     							<li>
+                     								<a href="blog">Blog</a>
+                     							</li>
+
+                     							<li>
+                     								<a href="about">About</a>
+                     							</li>
+
+                     							<li>
+                     								<a href="contact">Contact</a>
+                     							</li>
+                     						</ul>
+                     					</div>
+
+                     					<!-- Icon header -->
+                     					<div class="wrap-icon-header flex-w flex-r-m">
+                     						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                     							<i class="zmdi zmdi-search"></i>
+                     						</div>
+
+                     						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="0">
+                     							<i class="zmdi zmdi-shopping-cart"></i>
+                     						</div>
+
+                     						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+                     							<i class="zmdi zmdi-favorite-outline"></i>
+                     						</a>
+                     					</div>
+                     				</nav>
+                     			</div>
+                     		</div>
+
+
+
+                     		<!-- Modal Search -->
+                     		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+                     			<div class="container-search-header">
+                     				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+                     					<img src="resources/images/icons/icon-close2.png" alt="CLOSE">
+                     				</button>
+
+                     				<form class="wrap-search-header flex-w p-l-15">
+                     					<button class="flex-c-m trans-04">
+                     						<i class="zmdi zmdi-search"></i>
+                     					</button>
+                     					<input class="plh3" type="text" name="search" placeholder="Search...">
+                     				</form>
+                     			</div>
+                     		</div>
+                     	</header>
         			 <div class="container">
                      		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
                      			<a href="index" class="stext-109 cl8 hov-cl1 trans-04">
@@ -73,7 +164,7 @@
                      				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
                      			</a>
                      			<a href="product" class="stext-109 cl8 hov-cl1 trans-04">
-                                    Men
+                                    Shop
                                     <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
                                 </a>
                      		</div>
@@ -83,7 +174,7 @@
                                           <img src="${products.image}" alt="" >
                                           <h5>${products.productName}</h5>
                                           <h5>${products.price}$</h5>
-                                           <a class="btn btn-outline-danger" href="add/${products.proId}" role="button">THÊM VÀO GIỎ HÀNG</a>
+                                           <a class="btn btn-outline-danger addToCartBtn" href="shopping-cart/${products.proId}" role="button"data-product-id="add/${products.proId}">ADD TO CART</a>
 
                                    </div>
                                    <div class="block2-txt-child2 flex-r p-t-3">
@@ -104,14 +195,55 @@
                          </c:if>
 
                      </div>
+                     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.addToCartBtn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của nút
+            const productId = this.getAttribute('data-product-id');
+
+            // Lưu productId vào localStorage khi người dùng nhấn nút
+            localStorage.setItem('addedProductId', productId);
+
+            // Cập nhật giao diện người dùng ở đây (nếu cần)
+            alert('Product added to cart!');
+        });
+    });
+
+    // Kiểm tra xem có sản phẩm được thêm trước đó không khi trang được tải lại
+    const addedProductId = localStorage.getItem('addedProductId');
+    if (addedProductId) {
+        fetch(`/add/${addedProductId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+                // Thêm các header cần thiết nếu có
+            },
+        })
+
+        });
+    }
+});
+ document.querySelectorAll('.addToCartBtn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của nút
+            const productId = this.getAttribute('data-product-id');
+
+            // Lưu productId vào localStorage khi người dùng nhấn nút
+            localStorage.setItem('addedProductId', productId);
+
+            // Cập nhật giao diện người dùng ở đây (nếu cần)
+            alert('Product added to cart!');
+        });
+    });
+});
+</script>
         	<script src="resources/vendor/jquery/jquery-3.2.1.min.js"></script>
-        <!--===============================================================================================-->
         	<script src="resources/vendor/animsition/js/animsition.min.js"></script>
-        <!--===============================================================================================-->
         	<script src="resources/vendor/bootstrap/js/popper.js"></script>
         	<script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
-        <!--===============================================================================================-->
         	<script src="resources/vendor/select2/select2.min.js"></script>
         	<script>
         		$(".js-select2").each(function(){
@@ -121,18 +253,14 @@
         			});
         		})
         	</script>
-        <!--===============================================================================================-->
         	<script src="resources/vendor/daterangepicker/moment.min.js"></script>
         	<script src="resources/vendor/daterangepicker/daterangepicker.js"></script>
-        <!--===============================================================================================-->
         	<script src="resources/vendor/slick/slick.min.js"></script>
         	<script src="resources/js/slick-custom.js"></script>
-        <!--===============================================================================================-->
         	<script src="resources/vendor/parallax100/parallax100.js"></script>
         	<script>
                 $('.parallax100').parallax100();
         	</script>
-        <!--===============================================================================================-->
         	<script src="resources/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
         	<script>
         		$('.gallery-lb').each(function() { // the containers for all your galleries
