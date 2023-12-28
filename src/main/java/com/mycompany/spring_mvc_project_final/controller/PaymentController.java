@@ -264,7 +264,7 @@ public class PaymentController {
         emailContent = emailContent.replace("[priceOrder]", formattedPrice);
         emailContent = emailContent.replace("[promo]", formattedPriceAmount);
         emailContent = emailContent.replace("[priceKH]", formattedPriceAmountPay);
-        sendEmail(email, "Xác nhận Đặt phòng thành công tại COZA STORE", emailContent);
+        sendEmail(email, "Xác nhận Đặt hàng  thành công tại COZA STORE", emailContent);
         model.addObject("msg", email);
         return "success";
 //        return "index";
